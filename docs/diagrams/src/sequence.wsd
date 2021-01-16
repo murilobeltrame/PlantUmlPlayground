@@ -1,0 +1,55 @@
+@startuml Sequence Diagrams
+
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+
+participant participantName as participantAlias
+actor       actorName       as actorAlias
+boundary    boundaryName    as boundaryAlias
+control     controlName     as controlAlias
+entity      entityName      as entityAlias
+database    databaseName    as databaseAlias
+collections collectionsName as collectionsAlias
+queue       queueName       as queueAlias
+
+participantAlias -> actorAlias       : To actor 
+participantAlias -> boundaryAlias    : To boundary
+participantAlias -> controlAlias     : To control
+participantAlias -> entityAlias      : To entity
+participantAlias -> databaseAlias    : To database
+participantAlias -> collectionsAlias : To collections
+participantAlias -> queueAlias       : To queue
+
+' a comment
+/' a multiline 
+comment
+that ends here '/
+
+actor Bob as actorBob #red
+
+actor Alice as actorAlice #9933CC
+
+participant "That have  a\nvery long name" as longNameParticipant #FFF
+
+actorAlice -> actorAlice: Talks to herself so much\nthat we need to put it\n in another line.
+
+autonumber
+Bob ->x Alice
+Bob -> Alice
+Bob ->> Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+
+autonumber 10
+Bob ->o Alice
+Bob o\\-- Alice
+
+autonumber 20 5
+Bob <-> Alice
+Bob <[#blue]->o Alice
+
+@enduml
